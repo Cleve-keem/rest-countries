@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- <link rel="stylesheet" href="path-to-your-fontawesome/css/all.min.css" /> -->
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/utilities.css" />
     <title>Document</title>
-</head>
-<body>
-    <div id="root"></div>
-</body>
+  </head>
+  <body>
+    <div id="root">
+      <header>
+        <h2>Where in the world?</h2>
+        <div class="themes">
+          <i class="fa-sharp fa-solid fa-moon"></i>
+          <!-- <i class="fa-regular fa-moon"></i> -->
+          <p>Dark Mode</p>
+        </div>
+        <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+      </header>
+      <main>
+        <div class="category-section">
+          <div class="search-field">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" name="search" id="search" placeholder="Search for a country..."/>
+          </div>
+          <select name="Regions" id="regions">
+            <option value="1">Filter by Region</option>
+            <option value="2">Africa</option>
+            <option value="3">America</option>
+            <option value="4">Asia</option>
+            <option value="5">Europe</option>
+            <option value="6">Oceania</option>
+          </select>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
