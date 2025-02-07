@@ -13,40 +13,47 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="root">
-      <header>
-        <h2>Where in the world?</h2>
-        <div class="themes">
-          <i class="fa-sharp fa-solid fa-moon"></i>
-          <!-- <i class="fa-regular fa-moon"></i> -->
-          <p>Dark Mode</p>
-        </div>
-        <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
-      </header>
-      <main>
-        <div class="category-section">
-          <div class="search-field">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search for a country..."
-            />
-          </div>
-          <div class="drop-down" id="regions">
-            <div class="drop-down-head">Filter by Region</div>
-            <div class="drop-down-options">
-              <div class="option" value="1">Africa</div>
-              <div class="option" value="2">America</div>
-              <div class="option" value="3">Asia</div>
-              <div class="option" value="4">Europe</div>
-              <div class="option" value="5">Oceania</div>
-            </div>
-          </div>
-        </div>
-      </main>
+    <header>
+      <h2>Where in the world?</h2>
+      <div class="themes">
+        <i class="fa-solid fa-moon dark-moon-icon"></i>
+        <!-- <i class="fa-regular fa-moon"></i> -->
+        <p>Dark Mode</p>
+      </div>
+      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+    </header>
+    <div class="category-section">
+      <div class="search-field">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search for a country..."
+        />
+      </div>
+      <div class="drop-down" id="regions">
+        <div class="drop-down-head">Filter by Region</div>
+        <ul class="drop-down-options">
+          <li class="option" data-value="africa">Africa</li>
+          <li class="option" data-value="america">America</li>
+          <li class="option" data-value="asia">Asia</li>
+          <li class="option" data-value="europe">Europe</li>
+          <li class="option" data-value="oceania">Oceania</li>
+        </ul>
+      </div>
     </div>
+    <section class="countries container">
+      <div class="country-card">
+        <img src="https://flagcdn.com/w320/af.png" alt="flagcdn" />
+        <div class="country-details">
+          <h3 class="country-name">Afghanistan</h3>
+          <p id="population"><span>Population:</span> 81,770,900</p>
+          <p id="region"><span>Region:</span> Europe</p>
+          <p id="capital"><span>Capital:</span> Berlin</p>
+        </div>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
