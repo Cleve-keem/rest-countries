@@ -37,18 +37,18 @@ function renderCountries(countries) {
   clear();
   countries.forEach((country) => {
     console.log(country);
-    countriesGrid.innerHTML = `
-        <div class="country-card">
-            <img src="${country.flags.png}" alt="${country.name.common}" />
-            <div class="country-details">
-                <h3 class="name"> ${country.name.common}</h3>
-                <p id="population"><span>Population:</span> ${Number(
-                  country.population
-                ).toLocaleString()}</p>
-                <p id="region"><span>Region:</span> ${country.region}</p>
-                <p id="capital"><span>Capital:</span> ${country.capital[0]}</p>
-            </div>
-        </div>`;
+    countriesGrid.innerHTML += `
+    <div class="country-card">
+        <img src="${country.flags.png}" alt="${country.name.common}" />
+        <div class="country-details">
+            <h3 class="name"> ${country.name.common}</h3>
+            <p id="population"><span>Population:</span> ${Number(
+                country.population
+            ).toLocaleString()}</p>
+            <p id="region"><span>Region:</span> ${country.region}</p>
+            <p id="capital"><span>Capital:</span> ${country.capital[0]}</p>
+        </div>
+    </div>`;
   });
 }
 
