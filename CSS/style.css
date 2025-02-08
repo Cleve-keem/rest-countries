@@ -176,9 +176,11 @@ header h2 {
   font-weight: bold;
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (min-width: 374px) {
   .countries-grid {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 2rem;
+    place-items: center;
   }
 }
