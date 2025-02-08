@@ -3,16 +3,28 @@
   src: url(../assets/Fonts/static/NunitoSans_10pt-Light.ttf);
 }
 
-:root {
-  /* COLORS */
-  --Dark-Blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
-  --Very-Dark-Blue: hsl(207, 26%, 17%); /* Dark Mode Background */
-  --Very-Dark-Blue: hsl(200, 15%, 8%); /* Light Mode Text */
-  --Dark-Gray: hsl(0, 0%, 52%); /* Light Mode Input */
-  --Very-Light-Gray: hsl(0, 0%, 98%); /* Light Mode Background */
-  --White: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
+:root[data-theme="light"] {
+  --primary: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 52%);
+  --background-color: hsl(0, 0%, 98%);
+  --font-color: hsl(200, 15%, 8%);
+}
 
-  /* FONT SIZE */
+:root[data-theme="dark"] {
+  --primary: hsl(209, 23%, 22%);
+  --secondary: hsl(0, 0%, 83%);
+  --background-color: hsl(207, 26%, 17%);
+  --font-color: hsl(0, 0%, 100%);
+}
+
+:root {
+  --font-fam: "Nunito Sans", sans-serif;
+  --border-radius: 0.4rem;
+  --box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.1);
+  --box-shadow-2: 0 0 6px -1px rgba(0, 0, 0, 0.6);
+}
+
+:root {
   --Homepage-Items: 14px;
   --Detail-Page: 16px;
 }
@@ -126,7 +138,7 @@ header h2 {
   display: block;
 } */
 
-.countries{
+.countries {
   position: relative;
   display: flex;
   justify-content: center;
@@ -134,26 +146,26 @@ header h2 {
   z-index: 1;
 }
 
-.country-card{
+.country-card {
   max-width: 300px;
   background-color: var(--Dark-Blue);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.country-details{
+.country-details {
   padding: 2rem;
 }
 
-.country-details h3{
+.country-details h3 {
   margin-bottom: 1rem;
   font-size: 24px;
 }
 
 .country-details p {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
-.country-details > p span{
+.country-details > p span {
   font-weight: bold;
 }

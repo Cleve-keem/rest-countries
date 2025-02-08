@@ -1,0 +1,1 @@
+const toggleThemeBtn = document.getElementById("toggle-theme")
