@@ -39,6 +39,7 @@ header h2 {
 .themes {
   display: flex;
   align-items: baseline;
+  background-color: transparent;
   gap: 10px;
 }
 
@@ -47,19 +48,14 @@ header h2 {
 }
 
 .category-section {
-  flex: 1;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  overflow: hidden;
-  /* background-color: var(--Dark-Gray); */
 }
 
 .search-field {
   display: flex;
-  /* height: 50px; */
-  /* flex: 1; */
   background-color: var(--Dark-Blue);
   position: relative;
   border-radius: 5px;
