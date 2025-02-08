@@ -31,16 +31,16 @@
 
 body {
   font-family: "Nunito Sans";
-  color: var(--White);
-  background-color: var(--Very-Dark-Blue);
+  color: var(--font-color);
+  background-color: var(--background-color);
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--Dark-Blue);
-  color: var(--White);
+  background-color: var(--primary);
+  color: var(--font-color);
   padding: 2.5rem 1.5rem;
 }
 
@@ -48,11 +48,12 @@ header h2 {
   font-size: 17px;
 }
 
-.themes {
+.theme-btn {
   display: flex;
   align-items: baseline;
   background-color: transparent;
   gap: 10px;
+  color: var(--font-color);
 }
 
 .themes p {
