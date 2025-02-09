@@ -139,9 +139,9 @@ header h2 {
   margin-bottom: 8px;
 }
 
-/* .drop-down:hover .drop-down-options {
+.drop-down:hover .drop-down-options {
   display: block;
-} */
+}
 
 .countries-grid {
   /* position: relative; */

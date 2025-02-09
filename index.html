@@ -20,28 +20,30 @@
         <span>Dark Mode</span>
       </button>
     </header>
-    <div class="category-section">
-      <div class="search-field">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search for a country..."
-        />
-      </div>
-      <div class="drop-down" id="regions">
-        <div class="drop-down-head">Filter by Region</div>
-        <ul class="drop-down-options">
-          <li class="option" data-value="africa">Africa</li>
-          <li class="option" data-value="america">America</li>
-          <li class="option" data-value="asia">Asia</li>
-          <li class="option" data-value="europe">Europe</li>
-          <li class="option" data-value="oceania">Oceania</li>
-        </ul>
-      </div>
-    </div>
-    <section class="countries-grid container"></section>
+    <main>
+      <form class="category-section">
+        <div class="search-field">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search for a country..."
+          />
+        </div>
+        <div class="drop-down" id="regions">
+          <div class="drop-down-head">Filter by Region</div>
+          <ul class="drop-down-options">
+            <li class="option" data-value="africa">Africa</li>
+            <li class="option" data-value="america">America</li>
+            <li class="option" data-value="asia">Asia</li>
+            <li class="option" data-value="europe">Europe</li>
+            <li class="option" data-value="oceania">Oceania</li>
+          </ul>
+        </div>
+      </form>
+      <section class="countries-grid container"></section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
