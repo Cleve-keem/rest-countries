@@ -132,15 +132,10 @@ header h2 {
   top: 100%;
   left: 0;
   z-index: 200;
-  display: none;
 }
 
 .drop-down-options .option {
   margin-bottom: 8px;
-}
-
-.drop-down:hover .drop-down-options {
-  display: block;
 }
 
 .countries-grid {
@@ -152,11 +147,15 @@ header h2 {
 }
 
 .country-card {
-  max-width: 300px;
+  width: 300px;
   background-color: var(--primary);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--box-shadow-2);
+}
+
+.country-card img{
+  height: 200px;
 }
 
 .country-details {

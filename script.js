@@ -2,6 +2,7 @@ const rootElement = document.documentElement;
 const toggleThemeBtn = document.getElementById("toggle-themes");
 const countriesGrid = document.querySelector(".countries-grid");
 const dropdownOptions = document.querySelector(".drop-down-options");
+const dropdownHeader = document.querySelector(".drop-down-head");
 
 if (!localStorage.getItem("theme")) {
   rootElement.setAttribute("data-theme", "light");
@@ -25,6 +26,7 @@ async function fetchCountries() {
     const res = await fetch("https://restcountries.com/v3.1/all");
     const data = await res.json();
     allCountries = data;
+    // localStorage.setItem("allCountries", allCountries);
     renderCountries(data);
   } catch (error) {
     console.log(error.message);
@@ -37,6 +39,7 @@ function clear() {
 
 function renderCountries(countries) {
   clear();
+  closeDropdown();
   countries.forEach((country) => {
     // console.log(country);
     countriesGrid.innerHTML += `
@@ -48,22 +51,35 @@ function renderCountries(countries) {
               country.population
             ).toLocaleString()}</p>
             <p id="region"><span>Region:</span> ${country.region}</p>
-            <p id="capital"><span>Capital:</span> ${country.capital[0]}</p>
+            <p id="capital"><span>Capital:</span> ${
+              country.capital ? country.capital[0] : "N/A"
+            }</p>
         </div>
     </div>`;
   });
 }
 
+dropdownHeader.addEventListener("click", () => {
+  dropdownOptions.classList.toggle("hidden");
+});
+
 dropdownOptions.addEventListener("click", (e) => {
-  let selectedRegion = e.target.closest("li").dataset.value;
-//   console.log(selectedRegion);
-//   console.log(allCountries);
+  let option = e.target.closest("li");
+  let selectedRegion = option.dataset.value;
+
   if (selectedRegion) {
     const filterdRegion = allCountries.filter(
       (country) => country.region.toLowerCase() === selectedRegion
     );
     renderCountries(filterdRegion);
+    dropdownOptions.classList.add("hidden");
   }
 });
+
+function closeDropdown() {
+  if (dropdownOptions.classList.contains("hidden")) {
+    dropdownOptions.classList.add("hidden");
+  }
+}
 
 fetchCountries();
