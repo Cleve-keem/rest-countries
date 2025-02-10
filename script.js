@@ -82,4 +82,12 @@ function closeDropdown() {
   }
 }
 
+function findMatch(countryName) {
+  allCountries.forEach((country) =>
+    country.name.common.toLowerCase().includes(countryName)
+  );
+  //   const search = document.getElementById("search");
+  //   console.log(search.value);
+}
+
 fetchCountries();
