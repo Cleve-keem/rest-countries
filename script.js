@@ -41,7 +41,7 @@ function renderCountries(countries) {
   clear();
   closeDropdown();
   countries.forEach((country) => {
-    // console.log(country);
+    console.log(country);
     countriesGrid.innerHTML += `
     <div class="country-card">
         <img src="${country.flags.png}" alt="${country.name.common}" />
@@ -83,11 +83,15 @@ function closeDropdown() {
 }
 
 function findMatch(countryName) {
-  allCountries.forEach((country) =>
+  let searchCountry = allCountries.forEach((country) =>
     country.name.common.toLowerCase().includes(countryName)
   );
-  //   const search = document.getElementById("search");
-  //   console.log(search.value);
+
+  if (searchCountry) {
+    return renderCountries(searchCountry);
+  }
+
+  return renderCountries(allCountries);
 }
 
 fetchCountries();
