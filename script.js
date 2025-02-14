@@ -78,21 +78,18 @@ dropdownOptions.addEventListener("click", (e) => {
 });
 
 function closeDropdown() {
-  if (dropdownOptions.classList.contains("hidden")) {
+  if (!dropdownOptions.classList.contains("hidden")) {
     dropdownOptions.classList.add("hidden");
   }
 }
 
-function findMatch(e) {
-  e.preventDefault();
-  clear();
-  let searchCountry = allCountries.filter((country) =>
-    country.name.common.toLowerCase().includes(searchInput.value.toLowerCase())
+function findMatch() {
+  let searchTerm = searchInput.value.toLowerCase();
+  let searchResults = allCountries.filter((country) =>
+    country.name.common.toLowerCase().includes(searchTerm)
   );
-  if (searchCountry) {
-    return renderCountries(searchCountry);
-  }
-  return renderCountries(allCountries);
+  
+  return renderCountries(searchResults.length > 0 ? searchInput : allCountries);
 }
 
 const debounce = (func, delay = 1000) => {
