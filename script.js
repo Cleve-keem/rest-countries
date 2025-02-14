@@ -3,6 +3,7 @@ const toggleThemeBtn = document.getElementById("toggle-themes");
 const countriesGrid = document.querySelector(".countries-grid");
 const dropdownOptions = document.querySelector(".drop-down-options");
 const dropdownHeader = document.querySelector(".drop-down-head");
+const searchInput = document.getElementById("search");
 
 if (!localStorage.getItem("theme")) {
   rootElement.setAttribute("data-theme", "light");
@@ -82,16 +83,30 @@ function closeDropdown() {
   }
 }
 
-function findMatch(countryName) {
-  let searchCountry = allCountries.forEach((country) =>
-    country.name.common.toLowerCase().includes(countryName)
+function findMatch(e) {
+  e.preventDefault();
+  clear();
+  let searchCountry = allCountries.filter((country) =>
+    country.name.common.toLowerCase().includes(searchInput.value.toLowerCase())
   );
-
   if (searchCountry) {
     return renderCountries(searchCountry);
   }
-
   return renderCountries(allCountries);
 }
+
+const debounce = (func, delay = 1000) => {
+  let timeoutId;
+  return (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(null, args);
+    }, delay);
+  };
+};
+
+searchInput.addEventListener("input", debounce(findMatch, 500));
 
 fetchCountries();
